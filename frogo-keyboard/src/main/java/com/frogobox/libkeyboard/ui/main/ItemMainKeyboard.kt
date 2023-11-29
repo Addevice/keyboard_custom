@@ -125,7 +125,8 @@ class ItemMainKeyboard {
                 R.styleable.KwKeyboard_keyWidth,
                 parent.mDisplayWidth,
                 parent.mDefaultWidth)
-            defaultHeight = 100
+            defaultHeight =
+                (res.getDimension(R.dimen.key_height) * this.parent.mKeyboardHeightMultiplier).roundToInt() + 10
             defaultHorizontalGap = getDimensionOrFraction(a,
                 R.styleable.KwKeyboard_horizontalGap,
                 parent.mDisplayWidth,
@@ -381,7 +382,7 @@ class ItemMainKeyboard {
                         }
                         TAG_KEY -> {
                             inKey = true
-                            key = createKeyFromXml(res, currentRow!!, x, y + 50, parser)
+                            key = createKeyFromXml(res, currentRow!!, x, y + 5, parser)
                             mKeys!!.add(key)
                             if (key.code == KEYCODE_ENTER) {
                                 val enterResourceId = when (mEnterKeyType) {
@@ -408,14 +409,14 @@ class ItemMainKeyboard {
                         }
                     } else if (inRow) {
                         inRow = false
-                        y += currentRow!!.defaultHeight + 24
+                        y += currentRow!!.defaultHeight
                         row++
                     }
                 }
             }
         } catch (e: Exception) {
         }
-        mHeight = y+96
+        mHeight = y
     }
 
     private fun parseKeyboardAttributes(res: Resources, parser: XmlResourceParser) {
