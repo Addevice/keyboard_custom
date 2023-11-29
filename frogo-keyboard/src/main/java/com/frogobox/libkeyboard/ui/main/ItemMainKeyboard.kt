@@ -125,8 +125,7 @@ class ItemMainKeyboard {
                 R.styleable.KwKeyboard_keyWidth,
                 parent.mDisplayWidth,
                 parent.mDefaultWidth)
-            defaultHeight =
-                (res.getDimension(R.dimen.key_height)).roundToInt()
+            defaultHeight = 100
             defaultHorizontalGap = getDimensionOrFraction(a,
                 R.styleable.KwKeyboard_horizontalGap,
                 parent.mDisplayWidth,
@@ -409,14 +408,14 @@ class ItemMainKeyboard {
                         }
                     } else if (inRow) {
                         inRow = false
-                        y += currentRow!!.defaultHeight + 50
+                        y += currentRow!!.defaultHeight + 24
                         row++
                     }
                 }
             }
         } catch (e: Exception) {
         }
-        mHeight = y
+        mHeight = y+96
     }
 
     private fun parseKeyboardAttributes(res: Resources, parser: XmlResourceParser) {
