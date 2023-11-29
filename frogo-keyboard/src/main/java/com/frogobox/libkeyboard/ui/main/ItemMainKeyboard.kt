@@ -217,7 +217,7 @@ class ItemMainKeyboard {
                 R.styleable.KwKeyboard_keyWidth,
                 keyboard.mDisplayWidth,
                 parent.defaultWidth)
-            height = parent.defaultHeight
+            height = parent.defaultHeight - 20
             gap = getDimensionOrFraction(a,
                 R.styleable.KwKeyboard_horizontalGap,
                 keyboard.mDisplayWidth,
