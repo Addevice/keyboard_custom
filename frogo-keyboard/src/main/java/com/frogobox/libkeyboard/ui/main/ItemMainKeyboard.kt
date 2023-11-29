@@ -223,7 +223,7 @@ class ItemMainKeyboard {
                 keyboard.mDisplayWidth,
                 parent.defaultHorizontalGap)
             this.x += gap
-
+            this.y += 20
             a.recycle()
             a = res.obtainAttributes(Xml.asAttributeSet(parser), R.styleable.KwKeyboard_Key)
             code = a.getInt(R.styleable.KwKeyboard_Key_code, 0)
