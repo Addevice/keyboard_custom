@@ -126,7 +126,7 @@ class ItemMainKeyboard {
                 parent.mDisplayWidth,
                 parent.mDefaultWidth)
             defaultHeight =
-                (res.getDimension(R.dimen.key_height) * this.parent.mKeyboardHeightMultiplier).roundToInt()
+                (res.getDimension(R.dimen.key_height) * 2).roundToInt()
             defaultHorizontalGap = getDimensionOrFraction(a,
                 R.styleable.KwKeyboard_horizontalGap,
                 parent.mDisplayWidth,
@@ -429,6 +429,6 @@ class ItemMainKeyboard {
     }
 
     private fun getKeyboardHeightMultiplier(): Float {
-        return 3F
+        return 1F
     }
 }
