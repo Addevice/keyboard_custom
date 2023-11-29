@@ -126,7 +126,7 @@ class ItemMainKeyboard {
                 parent.mDisplayWidth,
                 parent.mDefaultWidth)
             defaultHeight =
-                (res.getDimension(R.dimen.key_height) * 2).roundToInt()
+                (res.getDimension(R.dimen.key_height)).roundToInt()
             defaultHorizontalGap = getDimensionOrFraction(a,
                 R.styleable.KwKeyboard_horizontalGap,
                 parent.mDisplayWidth,
@@ -223,7 +223,7 @@ class ItemMainKeyboard {
                 keyboard.mDisplayWidth,
                 parent.defaultHorizontalGap)
             this.x += gap
-            this.y += 20
+            this.y += 100
             a.recycle()
             a = res.obtainAttributes(Xml.asAttributeSet(parser), R.styleable.KwKeyboard_Key)
             code = a.getInt(R.styleable.KwKeyboard_Key_code, 0)
