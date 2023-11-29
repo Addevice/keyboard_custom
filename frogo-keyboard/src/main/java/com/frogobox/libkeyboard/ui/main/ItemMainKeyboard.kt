@@ -223,7 +223,6 @@ class ItemMainKeyboard {
                 keyboard.mDisplayWidth,
                 parent.defaultHorizontalGap)
             this.x += gap
-            this.y += 100
             a.recycle()
             a = res.obtainAttributes(Xml.asAttributeSet(parser), R.styleable.KwKeyboard_Key)
             code = a.getInt(R.styleable.KwKeyboard_Key_code, 0)
@@ -383,7 +382,7 @@ class ItemMainKeyboard {
                         }
                         TAG_KEY -> {
                             inKey = true
-                            key = createKeyFromXml(res, currentRow!!, x, y, parser)
+                            key = createKeyFromXml(res, currentRow!!, x, y + 50, parser)
                             mKeys!!.add(key)
                             if (key.code == KEYCODE_ENTER) {
                                 val enterResourceId = when (mEnterKeyType) {
@@ -410,7 +409,7 @@ class ItemMainKeyboard {
                         }
                     } else if (inRow) {
                         inRow = false
-                        y += currentRow!!.defaultHeight
+                        y += currentRow!!.defaultHeight + 50
                         row++
                     }
                 }
