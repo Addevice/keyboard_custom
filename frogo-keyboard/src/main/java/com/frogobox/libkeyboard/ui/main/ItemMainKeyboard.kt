@@ -429,6 +429,6 @@ class ItemMainKeyboard {
     }
 
     private fun getKeyboardHeightMultiplier(): Float {
-        return 1F
+        return 3F
     }
 }
